@@ -8,7 +8,7 @@ const SearchBar = ({ onResults }) => {   // 👈 accept onResults from parent
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/notebooks/search", {
+      const res = await axios.post("https://notebooklm-project.onrender.com/api/notebooks/search", {
         query,
       });
 
@@ -43,3 +43,4 @@ const SearchBar = ({ onResults }) => {   // 👈 accept onResults from parent
 };
 
 export default SearchBar;
+
