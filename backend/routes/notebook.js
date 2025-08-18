@@ -40,6 +40,26 @@ router.get("/all", async (req, res) => {
     }
 });
 
+router.post("/search", async (req, res) => {
+  const { query } = req.body;
+
+if (!query) {
+  return res.status(400).json({ error: "Search query is required" });
+}
+
+try {
+  const notebooks = await Notebook.find({
+    title: { $regex: query, $options: "i" }, // case-insensitive search
+  });
+
+  return res.json({ results: notebooks });  // ✅ send back results
+} catch (err) {
+  console.error(err);
+  return res.status(500).json({ error: "Server error" });
+}
+
+});
+
 // View my notebooks
 router.get("/my", protect, async (req, res) => {
     try {
@@ -61,3 +81,4 @@ router.get("/me", protect, async (req, res) => {
 });
 
 export default router;
+
