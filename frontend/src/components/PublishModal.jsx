@@ -113,7 +113,7 @@ export default function PublishModal({ onClose }) {
       />
     )}
 
-    <div className="flex items-center gap-3 mb-4">
+{/*     <div className="flex items-center gap-3 mb-4">
       <input
         type="checkbox"
         checked={form.isPaid}
@@ -131,7 +131,7 @@ export default function PublishModal({ onClose }) {
         onChange={(e) => setForm({ ...form, price: e.target.value })}
         className="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-black focus:outline-none"
       />
-    )}
+    )} */}
 
     <div className="flex justify-end gap-3 pt-3 border-t">
       <button
@@ -154,3 +154,4 @@ export default function PublishModal({ onClose }) {
 
   );
 }
+
