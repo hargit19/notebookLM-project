@@ -31,7 +31,12 @@ export default function SignIn() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 gap-[100px]">
+      <div>
+        <span style={{fontSize: "35px", fontWeight: "500" , borderBottom : "10px"}}>Welcome to</span>
+      <img src="/logo2.png" alt="logo"></img>
+      <span style={{fontSize: "35px", fontWeight: "500" , borderBottom : "10px" , marginLeft : "420px"}}>Community</span>
+      </div>
       <form
         onSubmit={handleSignIn}
         className="bg-white p-6 rounded shadow-md w-96"
