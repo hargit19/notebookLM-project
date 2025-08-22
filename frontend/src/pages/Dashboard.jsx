@@ -41,15 +41,22 @@ export default function Dashboard() {
         <h1 className="text-xl">Dashboard</h1>
         </div>
         <div className="flex gap-3">
+          <a href="https://notebooklm.google.com/" target="_blank" rel="noreferrer">
+        <button
+            className="bg-black text-white px-4 py-2 rounded"
+          >
+            Create Notebook
+          </button>
+          </a>
           <button
             onClick={() => setShowModal(true)}
-            className="bg-blue-500 text-white px-4 py-2 rounded"
+            className="bg-black text-white px-4 py-2 rounded"
           >
             Publish Notebook
           </button>
           <button
             onClick={() => navigate("/profile")}
-            className="bg-gray-500 text-white px-4 py-2 rounded"
+            className="bg-black text-white px-4 py-2 rounded"
           >
             Profile
           </button>
@@ -125,3 +132,4 @@ export default function Dashboard() {
     </div>
   );
 }
+
