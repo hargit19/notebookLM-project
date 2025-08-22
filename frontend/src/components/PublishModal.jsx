@@ -93,7 +93,7 @@ export default function PublishModal({ onClose }) {
 
     {/* Cloudinary Upload */}
     <label className="block mb-2 font-medium text-gray-800">
-      Background Image:
+      Background Image  <span className="text-xs text-gray-400"> (Optional) </span>
     </label>
     <input
       type="file"
@@ -154,4 +154,5 @@ export default function PublishModal({ onClose }) {
 
   );
 }
+
 
