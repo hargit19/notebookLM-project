@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import PaymentDialog from "../components/PaymentDialog";
 import SearchBar from "../components/SearchBar"; // 👈 import searchbar
 import ShareButtons from "../components/ShareButtons"; 
-import ShareNotebook from "../components/ShareNotebook";
+// import ShareNotebook from "../components/ShareNotebook";
 
 export default function Dashboard() {
   const [notebooks, setNotebooks] = useState([]);
@@ -136,3 +136,4 @@ export default function Dashboard() {
     </div>
   );
 }
+
