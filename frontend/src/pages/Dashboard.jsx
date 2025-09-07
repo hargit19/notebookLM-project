@@ -39,8 +39,8 @@ export default function Dashboard() {
       {/* Top Bar */}
       <div className="flex justify-between items-center mb-6">
         <div className="flex justify-between items-center gap-2">
-        <img src="/logo2.png" alt="logo" style={{height : "20px"}}></img>
-        <h1 className="text-xl">Dashboard</h1>
+       <span style={{fontSize : "1.5rem" , fontWeight : "500"}}>NoteShare</span>
+{/*         <h1 className="text-xl">Dashboard</h1> */}
         </div>
         <div className="flex gap-3">
           <a href="https://notebooklm.google.com/" target="_blank" rel="noreferrer">
@@ -136,4 +136,5 @@ export default function Dashboard() {
     </div>
   );
 }
+
 
