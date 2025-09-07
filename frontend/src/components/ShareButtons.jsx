@@ -8,9 +8,9 @@ const ShareButtons = ({ notebook }) => {
 Check out this notebook: ${notebook.title}
 ${shareUrl}
 
-This notebook was created by the NBLM community (https://notebook-lm-project-k5ax.vercel.app/).
+This notebook was created by NoteShare (https://notebook-lm-project-k5ax.vercel.app/).
 
-#NotebookLM #NBLMcommunity
+#NoteShare #NoteSharecommunity
 `;
 
   const encodedMessage = encodeURIComponent(message);
@@ -72,3 +72,4 @@ This notebook was created by the NBLM community (https://notebook-lm-project-k5a
 };
 
 export default ShareButtons;
+
