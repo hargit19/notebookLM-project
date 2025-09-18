@@ -5,6 +5,7 @@ import SignUp from "./pages/SignUp";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
+import NotebookPage from "./pages/NotebookPage";
 
 export default function App() {
   return (
@@ -31,6 +32,10 @@ export default function App() {
             </ProtectedRoute>
           }
         />
+          <Route path="/notebooks/:id" element={
+          <ProtectedRoute>
+          <NotebookPage />
+          </ProtectedRoute>} />
       </Routes>
     </Router>
   );
