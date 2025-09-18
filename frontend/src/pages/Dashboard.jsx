@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import PaymentDialog from "../components/PaymentDialog";
 import SearchBar from "../components/SearchBar"; // 👈 import searchbar
 import ShareButtons from "../components/ShareButtons"; 
-// import ShareNotebook from "../components/ShareNotebook";
+import ShareNotebook from "../components/ShareNotebook";
 
 export default function Dashboard() {
   const [notebooks, setNotebooks] = useState([]);
@@ -39,8 +39,9 @@ export default function Dashboard() {
       {/* Top Bar */}
       <div className="flex justify-between items-center mb-6">
         <div className="flex justify-between items-center gap-2">
-       <span style={{fontSize : "1.5rem" , fontWeight : "500"}}>NoteShare</span>
-{/*         <h1 className="text-xl">Dashboard</h1> */}
+        {/* <img src="/logo2.png" alt="logo" style={{height : "20px"}}></img> */}
+        <span style={{fontSize : "1.5rem" , fontWeight : "500"}}>NoteShare</span>
+        {/* <h1 className="text-xl">Dashboard</h1> */}
         </div>
         <div className="flex gap-3">
           <a href="https://notebooklm.google.com/" target="_blank" rel="noreferrer">
@@ -75,9 +76,10 @@ export default function Dashboard() {
         {filteredNotebooks.map((nb) => (
           <div
             key={nb._id}
-            onClick={() => {
-              window.open(nb.url, "_blank");
-            }}
+            // onClick={() => {
+            //   window.open(nb.url, "_blank");
+            // }}
+            onClick={() => navigate(`/notebooks/${nb._id}`)}
             className="relative rounded-xl overflow-hidden shadow-lg cursor-pointer group"
           >
             {/* Background image with dark overlay */}
@@ -136,5 +138,3 @@ export default function Dashboard() {
     </div>
   );
 }
-
-
