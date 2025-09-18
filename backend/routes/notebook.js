@@ -80,5 +80,21 @@ router.get("/me", protect, async (req, res) => {
     }
 });
 
+router.get("/:id", async (req, res) => {
+  try {
+    const notebook = await Notebook.findById(req.params.id);
+
+    if (!notebook) {
+      return res.status(404).json({ error: "Notebook not found" });
+    }
+
+    res.json(notebook);
+  } catch (err) {
+    console.error("Error fetching notebook:", err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
 export default router;
+
 
