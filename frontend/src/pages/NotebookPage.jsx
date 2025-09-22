@@ -109,8 +109,27 @@ export default function NotebookPage() {
             </h3>
             <ShareButtons notebook={notebook} />
           </div>
+
+          {notebook.authorEmail && (
+            <div className="mt-8 border-t pt-6">
+              <h3 className="text-lg font-semibold mb-2 text-gray-800">
+                Contact the Author
+              </h3>
+              <p className="text-gray-700">
+                You can contact the author of this notebook at:{" "}
+                <a
+                  href={`mailto:${notebook.authorEmail}`}
+                  className="text-blue-600 hover:underline"
+                >
+                  {notebook.authorEmail}
+                </a>
+              </p>
+            </div>
+          )}
+          
         </div>
       </div>
     </div>
   );
 }
+
