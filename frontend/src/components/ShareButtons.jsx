@@ -2,7 +2,7 @@ import React from "react";
 
 const ShareButtons = ({ notebook }) => {
   // Build your app’s dynamic URL (frontend detail page)
-  const shareUrl = `${window.location.origin}/noteshare/notebooks/${notebook._id}`;
+  const shareUrl = `${window.location.origin}/notebooks/${notebook._id}`;
 
   // 👇 Build text with notebook + community message
   const message = `
@@ -73,5 +73,6 @@ This notebook was created by NoteShare (https://notebook-lm-project-k5ax.vercel.
 };
 
 export default ShareButtons;
+
 
 
