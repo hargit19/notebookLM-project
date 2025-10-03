@@ -44,3 +44,4 @@ const SearchBar = ({ onResults }) => {   // 👈 accept onResults from parent
 
 export default SearchBar;
 
+
