@@ -30,6 +30,36 @@ router.post("/publish", protect, async (req, res) => {
     }
 });
 
+router.put("/edit/:id", protect, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { title, url, backgroundImageUrl, topics, isPaid, price } = req.body;
+
+    // Find and verify ownership
+    const notebook = await Notebook.findById(id);
+    if (!notebook) {
+      return res.status(404).json({ message: "Notebook not found" });
+    }
+
+    if (notebook.authorId.toString() !== req.user._id.toString()) {
+      return res.status(403).json({ message: "Unauthorized to edit this notebook" });
+    }
+
+    // Update fields
+    notebook.title = title || notebook.title;
+    notebook.url = url || notebook.url;
+    notebook.backgroundImageUrl = backgroundImageUrl || notebook.backgroundImageUrl;
+    notebook.topics = topics || notebook.topics;
+    notebook.isPaid = isPaid ?? notebook.isPaid;
+    notebook.price = isPaid ? price : 0;
+
+    await notebook.save();
+    res.status(200).json({ message: "Notebook updated successfully", notebook });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 // View all notebooks
 router.get("/all", async (req, res) => {
     try {
@@ -100,6 +130,7 @@ router.get("/:id", async (req, res) => {
 });
 
 export default router;
+
 
 
 
